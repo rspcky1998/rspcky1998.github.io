@@ -1,596 +1,580 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul P K | Doctoral Researcher - Oklahoma State University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #0a0d14;
+            --bg-card: #111622;
+            --bg-nav: rgba(10, 13, 20, 0.85);
+            --accent: #ff6b35; /* Ideation Lab Signature Orange */
+            --accent-rgb: 255, 107, 53;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+            --font-heading: 'Space Grotesk', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 8rem 0 4rem 0;
+        }
+
+        .accent-text {
+            color: var(--accent);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border), transparent);
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--bg-nav);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--text-main);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 95vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 120px;
+            background: radial-gradient(circle at 80% 20%, rgba(var(--accent-rgb), 0.07), transparent 40%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-badge {
+            background-color: rgba(var(--accent-rgb), 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(var(--accent-rgb), 0.2);
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .meta-item h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.05em;
+        }
+
+        .meta-item p {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(var(--accent-rgb), 0.2);
+        }
+
+        /* About & Timeline Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 1px solid var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: calc(-2rem - 5px);
+            top: 6px;
+            width: 9px;
+            height: 9px;
+            background-color: var(--accent);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-sub {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Research Section */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .research-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+
+        .research-card:hover {
+            border-color: rgba(var(--accent-rgb), 0.4);
+            transform: translateY(-4px);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .research-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .research-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Featured Publication / Highlight */
+        .featured-project {
+            background: linear-gradient(135deg, var(--bg-card), #161d2f);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1.5fr 0.5fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .skills-category {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+
+        .skills-category h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.75rem;
+            color: var(--text-main);
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            list-style: none;
+        }
+
+        .skill-list li {
+            background-color: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* News Section */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .news-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .news-date {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .news-content {
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 0;
+            margin-top: 6rem;
+            background-color: #06080d;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero-grid, .about-grid, .research-grid, .skills-grid, .featured-project {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            .nav-links {
+                display: none; /* Can expand to simple responsive mobile menu later */
+            }
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Rahul P K | Doctoral Researcher - Oklahoma State University&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">    </span></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg-main: #0a0d14;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg-card: #111622;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg-nav: rgba(10, 13, 20, 0.85);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent: #ff6b35; /* Ideation Lab Signature Orange */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent-rgb: 255, 107, 53;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #f1f5f9;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #94a3b8;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--border: #1e293b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--font-heading: 'Space Grotesk', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--font-body: 'Plus Jakarta Sans', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-main);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: var(--font-body);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Utilities */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-padding {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 8rem 0 4rem 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.accent-text {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h1, h2, h3, h4 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: var(--font-heading);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -0.02em;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-title::after {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-grow: 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, var(--border), transparent);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Header / Navbar */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-nav);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(12px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 70px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.logo {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: var(--font-heading);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-links {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-links a {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.nav-links a:hover, .nav-links a.active {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Hero Section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>#hero {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>min-height: 95vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 120px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: radial-gradient(circle at 80% 20%, rgba(var(--accent-rgb), 0.07), transparent 40%);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1.2fr 0.8fr;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 4rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-badge {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(var(--accent-rgb), 0.1);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.5rem 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 100px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(var(--accent-rgb), 0.2);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 4rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-subtitle {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-meta {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(2, 1fr);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.meta-item h4 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.05em;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.meta-item p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.8rem 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s, box-shadow 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 20px rgba(var(--accent-rgb), 0.2);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* About &amp; Timeline Section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.about-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1fr 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 4rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.about-text p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.05rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.timeline {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-left: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.timeline-item {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.timeline-item::before {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: calc(-2rem - 5px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 9px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 9px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.timeline-date {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.timeline-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.25rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.timeline-sub {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Research Section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.research-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(2, 1fr);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.research-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-card);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: border-color 0.3s, transform 0.3s;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.research-card:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: rgba(var(--accent-rgb), 0.4);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-4px);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.card-icon {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.research-card h3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.research-card p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.95rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Featured Publication / Highlight */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.featured-project {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, var(--bg-card), #161d2f);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1.5fr 0.5fr;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Skills Section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.skills-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(3, 1fr);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.skills-category {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-card);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.skills-category h3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 0.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.skill-list {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 0.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.skill-list li {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(255,255,255,0.04);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0.4rem 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.85rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* News Section */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.news-list {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.news-item {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 150px 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 1.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.news-date {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.news-content {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Footer */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid var(--border);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 4rem 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 6rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: #06080d;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Responsive Design */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 968px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero-grid, .about-grid, .research-grid, .skills-grid, .featured-project {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>gap: 2.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero-title {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>font-size: 2.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.nav-links {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>display: none; /* Can expand to simple responsive mobile menu later */</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container nav-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="#hero" class="logo"&gt;RAHUL P K&lt;span class="accent-text"&gt;.&lt;/span&gt;&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="nav-links"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;a href="#hero"&gt;Home&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;a href="#research"&gt;Research&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;a href="#skills"&gt;Skills&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;a href="#news"&gt;News&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container hero-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="hero-badge"&gt;Skinner Chemistry Fellow&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="hero-title"&gt;Rahul Pandit&lt;br&gt;Kumarchinchole&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="hero-subtitle"&gt;Doctoral Researcher in the Department of Chemistry at Oklahoma State University, specializing in the intersection of Electrochemistry, Biosensors, and Nano-biotechnology.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">                </span></p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="hero-meta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="meta-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4&gt;Office Location&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;Physical Sciences 449&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="meta-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4&gt;Contact Email&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p&gt;rahul.p_k@okstate.edu&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="#research" class="btn"&gt;Explore My Research&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;svg viewBox="0 0 400 400" width="100%" height="auto" style="opacity: 0.85;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;defs&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.2" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                            </span>&lt;stop offset="100%" style="stop-color:transparent;stop-opacity:0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/linearGradient&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/defs&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;rect width="400" height="400" fill="url(#grad)" rx="12"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;circle cx="200" cy="200" r="120" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 8"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;circle cx="200" cy="200" r="60" fill="none" stroke="var(--border)" stroke-width="2"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;line x1="40" y1="200" x2="360" y2="200" stroke="var(--border)" stroke-width="1"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;line x1="200" y1="40" x2="200" y2="360" stroke="var(--border)" stroke-width="1"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="about" class="container section-padding"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Academic Biography&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="about-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="about-text"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;I am a dedicated doctoral researcher working alongside Advisor Prof. Sadagopan Krishnan. My scientific mission centers around scaling fundamental micro-electrochemical systems into versatile translation platforms—particularly "Point of Care" (POC) diagnostics and integrated wearable bio-sensors.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;My multi-disciplinary toolkit bridges organic-inorganic material configurations, custom microfabrication routines, and quantitative physical metrics to drive safety, continuity, and intelligence across consumer diagnostics, clinical monitoring, and agricultural surveillance systems.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="timeline"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="timeline-date"&gt;2024 — Present&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="timeline-title"&gt;Ph.D. in Chemistry&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="timeline-sub"&gt;Oklahoma State University (OSU), Stillwater, USA&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="timeline-date"&gt;2023&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="timeline-title"&gt;Research Assistant&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="timeline-sub"&gt;Indian Institute of Technology Palakkad (IIT PKD), India&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="timeline-date"&gt;2021 — 2023&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="timeline-title"&gt;Master of Science in Chemistry&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="timeline-sub"&gt;Indian Institute of Technology Palakkad (IIT PKD), India&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="timeline-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="timeline-date"&gt;2018 — 2021&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="timeline-title"&gt;Bachelor of Science&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="timeline-sub"&gt;KLE P C Jabin Science College, Hubballi, India&lt;br&gt;&lt;small&gt;Majors: Physics, Chemistry &amp; Mathematics&lt;/small&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="research" class="container section-padding"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Research Overview &amp; Projects&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="research-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="research-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="card-icon"&gt;⚡&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Multiplexed Microneedle Biosensors&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Engineering electrochemical, skin-interfaced microneedle diagnostic arrays capable of evaluating multiple key physiological biomarkers inside Interstitial Fluid (ISF) concurrently without classic clinical boundaries.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="research-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="card-icon"&gt;🎨&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Colorimetric Biosensing Arrays&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Developing instrument-free, chemical visual assays designed to process broad-spectrum ambient tests natively across decentralised clinical, environmental, or agricultural setups.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="research-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="card-icon"&gt;🧬&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Molecularly Imprinted Polymers (MIPs)&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Synthesizing biomimetic matrix structures acting as scalable synthetic antibodies, maximizing diagnostic hardware lifecycle robustly across remote environments.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="research-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="card-icon"&gt;🔋&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Energy Micro-Conversion&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Investigating materials and pathways configured specifically to harvest or transform energy micro-scales directly on-device to power self-sustaining diagnostics ecosystems.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="featured-project"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="hero-badge" style="background-color: rgba(255,255,255,0.05); color: #fff; border-color: var(--border);"&gt;Latest Project &amp; Publication Highlight&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 style="font-size: 1.8rem; margin: 1rem 0;"&gt;Electrochemical Strip Sensor Based on a Graphene-Au-PEDOT Nanocomposite&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p style="color: var(--text-muted); margin-bottom: 0;"&gt;Developing highly specialized, integrated matrix sensors designed for continuous monitoring and trace-level tracking of Dacarbazine alongside translational therapeutics.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div style="text-align: right;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://rahulpk.weebly.com/" target="_blank" class="btn" style="background-color: transparent; border: 1px solid var(--border); color: var(--text-main);"&gt;Read Paper&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="skills" class="container section-padding"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Technical Expertise&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="skills-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="skills-category"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Electrochemistry &amp; Analytics&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="skill-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Cyclic Voltammetry (CV)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Electrochemical Impedance Spectroscopy (EIS)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Square Wave Voltammetry (SWV)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Chronoamperometry&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;PalmSens Systems&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;CH Instruments Workstations&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="skills-category"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Synthesis &amp; Biomaterials&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="skill-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Nanocomposites&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;MXenes &amp; Carbon Nanomaterials&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Graphene-Metal Nanoparticles&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Conducting Polymers&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Molecularly Imprinted Polymers (MIPs)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Enzymes &amp; Aptamer Handling&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="skills-category"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Fabrication &amp; Engineering&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="skill-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;3D Printing (Microneedles)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Screen-Printed Electrodes (SPE)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;Laser-Induced Graphene (LIG)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;AutoCAD / Fusion 360&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;SolidWorks / Blender&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li&gt;BioRender / Origin Lab&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section id="news" class="container section-padding"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Milestones &amp; Updates&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="news-list"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="news-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="news-date"&gt;Dec 2024&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="news-content"&gt;Awarded the prestigious &lt;strong&gt;Skinner Chemistry Fellowship&lt;/strong&gt; at Oklahoma State University, Stillwater, OK, USA.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="news-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="news-date"&gt;Aug 2024&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="news-content"&gt;Appointed Graduate Research Assistant (GRA) position in the Department of Chemistry.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="news-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="news-date"&gt;May 2024&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="news-content"&gt;Formally joined Prof. Sadagopan Krishnan's Advanced Biosensing Research Group.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="news-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="news-date"&gt;Jan 2024&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="news-content"&gt;Began Doctoral Studies as a Ph.D. Student in the Department of Chemistry at Oklahoma State University.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&amp;copy; 2026 Rahul Pandit Kumarchinchole. Built with academic precision.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-size: 0.8rem; color: #475569; margin-top: 0.5rem;"&gt;Department of Chemistry | Oklahoma State University&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#hero" class="logo">RAHUL P K<span class="accent-text">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#news">News</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="hero-badge">Skinner Chemistry Fellow</span>
+                <h1 class="hero-title">Rahul Pandit<br>Kumarchinchole</h1>
+                <p class="hero-subtitle">Doctoral Researcher in the Department of Chemistry at Oklahoma State University, specializing in the intersection of Electrochemistry, Biosensors, and Nano-biotechnology.</p>
+                
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <h4>Office Location</h4>
+                        <p>Physical Sciences 449</p>
+                    </div>
+                    <div class="meta-item">
+                        <h4>Contact Email</h4>
+                        <p>rahul.p_k@okstate.edu</p>
+                    </div>
+                </div>
+                <a href="#research" class="btn">Explore My Research</a>
+            </div>
+            <div>
+                <svg viewBox="0 0 400 400" width="100%" height="auto" style="opacity: 0.85;">
+                    <defs>
+                        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.2" />
+                            <stop offset="100%" style="stop-color:transparent;stop-opacity:0" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="400" height="400" fill="url(#grad)" rx="12"/>
+                    <circle cx="200" cy="200" r="120" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="4 8"/>
+                    <circle cx="200" cy="200" r="60" fill="none" stroke="var(--border)" stroke-width="2"/>
+                    <line x1="40" y1="200" x2="360" y2="200" stroke="var(--border)" stroke-width="1"/>
+                    <line x1="200" y1="40" x2="200" y2="360" stroke="var(--border)" stroke-width="1"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container section-padding">
+        <h2 class="section-title">Academic Biography</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>I am a dedicated doctoral researcher working alongside Advisor Prof. Sadagopan Krishnan. My scientific mission centers around scaling fundamental micro-electrochemical systems into versatile translation platforms—particularly "Point of Care" (POC) diagnostics and integrated wearable bio-sensors.</p>
+                <p>My multi-disciplinary toolkit bridges organic-inorganic material configurations, custom microfabrication routines, and quantitative physical metrics to drive safety, continuity, and intelligence across consumer diagnostics, clinical monitoring, and agricultural surveillance systems.</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 — Present</div>
+                    <h3 class="timeline-title">Ph.D. in Chemistry</h3>
+                    <div class="timeline-sub">Oklahoma State University (OSU), Stillwater, USA</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023</div>
+                    <h3 class="timeline-title">Research Assistant</h3>
+                    <div class="timeline-sub">Indian Institute of Technology Palakkad (IIT PKD), India</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 — 2023</div>
+                    <h3 class="timeline-title">Master of Science in Chemistry</h3>
+                    <div class="timeline-sub">Indian Institute of Technology Palakkad (IIT PKD), India</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 — 2021</div>
+                    <h3 class="timeline-title">Bachelor of Science</h3>
+                    <div class="timeline-sub">KLE P C Jabin Science College, Hubballi, India<br><small>Majors: Physics, Chemistry & Mathematics</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="container section-padding">
+        <h2 class="section-title">Research Overview & Projects</h2>
+        <div class="research-grid">
+            <div class="research-card">
+                <span class="card-icon">⚡</span>
+                <h3>Multiplexed Microneedle Biosensors</h3>
+                <p>Engineering electrochemical, skin-interfaced microneedle diagnostic arrays capable of evaluating multiple key physiological biomarkers inside Interstitial Fluid (ISF) concurrently without classic clinical boundaries.</p>
+            </div>
+            <div class="research-card">
+                <span class="card-icon">🎨</span>
+                <h3>Colorimetric Biosensing Arrays</h3>
+                <p>Developing instrument-free, chemical visual assays designed to process broad-spectrum ambient tests natively across decentralised clinical, environmental, or agricultural setups.</p>
+            </div>
+            <div class="research-card">
+                <span class="card-icon">🧬</span>
+                <h3>Molecularly Imprinted Polymers (MIPs)</h3>
+                <p>Synthesizing biomimetic matrix structures acting as scalable synthetic antibodies, maximizing diagnostic hardware lifecycle robustly across remote environments.</p>
+            </div>
+            <div class="research-card">
+                <span class="card-icon">🔋</span>
+                <h3>Energy Micro-Conversion</h3>
+                <p>Investigating materials and pathways configured specifically to harvest or transform energy micro-scales directly on-device to power self-sustaining diagnostics ecosystems.</p>
+            </div>
+        </div>
+
+        <div class="featured-project">
+            <div>
+                <span class="hero-badge" style="background-color: rgba(255,255,255,0.05); color: #fff; border-color: var(--border);">Latest Project & Publication Highlight</span>
+                <h3 style="font-size: 1.8rem; margin: 1rem 0;">Electrochemical Strip Sensor Based on a Graphene-Au-PEDOT Nanocomposite</h3>
+                <p style="color: var(--text-muted); margin-bottom: 0;">Developing highly specialized, integrated matrix sensors designed for continuous monitoring and trace-level tracking of Dacarbazine alongside translational therapeutics.</p>
+            </div>
+            <div style="text-align: right;">
+                <a href="https://rahulpk.weebly.com/" target="_blank" class="btn" style="background-color: transparent; border: 1px solid var(--border); color: var(--text-main);">Read Paper</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="container section-padding">
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="skills-grid">
+            <div class="skills-category">
+                <h3>Electrochemistry & Analytics</h3>
+                <ul class="skill-list">
+                    <li>Cyclic Voltammetry (CV)</li>
+                    <li>Electrochemical Impedance Spectroscopy (EIS)</li>
+                    <li>Square Wave Voltammetry (SWV)</li>
+                    <li>Chronoamperometry</li>
+                    <li>PalmSens Systems</li>
+                    <li>CH Instruments Workstations</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Synthesis & Biomaterials</h3>
+                <ul class="skill-list">
+                    <li>Nanocomposites</li>
+                    <li>MXenes & Carbon Nanomaterials</li>
+                    <li>Graphene-Metal Nanoparticles</li>
+                    <li>Conducting Polymers</li>
+                    <li>Molecularly Imprinted Polymers (MIPs)</li>
+                    <li>Enzymes & Aptamer Handling</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Fabrication & Engineering</h3>
+                <ul class="skill-list">
+                    <li>3D Printing (Microneedles)</li>
+                    <li>Screen-Printed Electrodes (SPE)</li>
+                    <li>Laser-Induced Graphene (LIG)</li>
+                    <li>AutoCAD / Fusion 360</li>
+                    <li>SolidWorks / Blender</li>
+                    <li>BioRender / Origin Lab</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="container section-padding">
+        <h2 class="section-title">Milestones & Updates</h2>
+        <div class="news-list">
+            <div class="news-item">
+                <div class="news-date">Dec 2024</div>
+                <div class="news-content">Awarded the prestigious <strong>Skinner Chemistry Fellowship</strong> at Oklahoma State University, Stillwater, OK, USA.</div>
+            </div>
+            <div class="news-item">
+                <div class="news-date">Aug 2024</div>
+                <div class="news-content">Appointed Graduate Research Assistant (GRA) position in the Department of Chemistry.</div>
+            </div>
+            <div class="news-item">
+                <div class="news-date">May 2024</div>
+                <div class="news-content">Formally joined Prof. Sadagopan Krishnan's Advanced Biosensing Research Group.</div>
+            </div>
+            <div class="news-item">
+                <div class="news-date">Jan 2024</div>
+                <div class="news-content">Began Doctoral Studies as a Ph.D. Student in the Department of Chemistry at Oklahoma State University.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Rahul Pandit Kumarchinchole. Built with academic precision.</p>
+            <p style="font-size: 0.8rem; color: #475569; margin-top: 0.5rem;">Department of Chemistry | Oklahoma State University</p>
+        </div>
+    </footer>
+
 </body>
 </html>
